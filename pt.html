@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Penetration Testing Interface</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="pt.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>AI-Powered Penetration Testing</h1>
+            <div class="input-group">
+                <label for="urlInput">Enter Target URL:</label>
+                <input type="text" id="urlInput" placeholder="https://example.com">
+                <button id="testButton" onclick="runTest()">Run Test</button>
+            </div>
+        </header>
+
+        <main>
+            <div class="test-progress">
+                <div class="progress-bar">
+                    <div id="progressFill"></div>
+                </div>
+                <div id="testStatus">Enter a URL and click "Run Test" to begin</div>
+            </div>
+
+            <div class="results-container">
+                <div class="logs-container">
+                    <h2>Test Logs</h2>
+                    <div id="testLogs" class="logs"></div>
+                </div>
+
+                <div class="results-summary">
+                    <h2>Test Results</h2>
+                    <div id="results" class="results-table-container"></div>
+                </div>
+            </div>
+
+            <div class="chart-container">
+                <h2>Security Score</h2>
+                <div class="chart-wrapper">
+                    <canvas id="scoreChart"></canvas>
+                </div>
+                <div id="scoreDisplay" class="score-display"></div>
+            </div>
+        </main>
+
+        <footer>
+            <p>Disclaimer: This tool provides basic security checks and should not replace professional security audits.</p>
+        </footer>
+    </div>
+
+    <!-- Modal for failed test details -->
+    <div id="vulnerabilityModal" class="modal">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <h2 id="modalTitle">Vulnerability Details</h2>
+            <div id="modalContent">
+                <p id="vulnerabilityExplanation"></p>
+                <div id="vulnerabilitySolution"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="pt.js"></script>
+</body>
+</html>
