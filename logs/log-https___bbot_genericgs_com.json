@@ -1,0 +1,878 @@
+{
+  "endpoints": [
+    {
+      "url": "https://bbot.genericgs.com/",
+      "method": "GET",
+      "type": "document",
+      "requestHeaders": {
+        "accept-language": "en-US,en;q=0.9",
+        "upgrade-insecure-requests": "1",
+        "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/134.0.0.0 Safari/537.36",
+        "sec-ch-ua": "\"Not:A-Brand\";v=\"24\", \"Chromium\";v=\"134\"",
+        "sec-ch-ua-mobile": "?0",
+        "sec-ch-ua-platform": "\"Windows\"",
+        "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7"
+      },
+      "requestBody": null,
+      "responseStatus": 200,
+      "responseHeaders": {
+        "alt-svc": "h3=\":443\"; ma=86400",
+        "cf-cache-status": "DYNAMIC",
+        "cf-ray": "920e687d286eb86b-ZRH",
+        "content-encoding": "zstd",
+        "content-type": "text/html",
+        "date": "Sat, 15 Mar 2025 19:27:26 GMT",
+        "last-modified": "Thu, 23 Jan 2025 12:54:38 GMT",
+        "nel": "{\"success_fraction\":0,\"report_to\":\"cf-nel\",\"max_age\":604800}",
+        "priority": "u=0,i",
+        "report-to": "{\"endpoints\":[{\"url\":\"https:\\/\\/a.nel.cloudflare.com\\/report\\/v4?s=Z79bVvHtJFhuLZEW0A2t2HpoEqgX2XS5AuKmZLjPYRAbWRngLgZbIRn7F7xoCnbH2pphCBfyws6N1Nbs2RFEOSH4Fk2jco7t9YFMv1fapXgXU9hCsGqH76uBNQmbWpdijhTALPQfuW2LEYTKkiSuCYg%3D\"}],\"group\":\"cf-nel\",\"max_age\":604800}",
+        "server": "cloudflare",
+        "server-timing": "cfL4;desc=\"?proto=QUIC&rtt=81157&min_rtt=69165&rtt_var=24261&sent=13&recv=9&lost=0&retrans=0&sent_bytes=4177&recv_bytes=4481&delivery_rate=8342&cwnd=12000&unsent_bytes=0&cid=ed756d1d5d81e3ba&ts=221&x=1\"\ncfExtPri\ncfHdrFlush;dur=0",
+        "vary": "accept-encoding"
+      }
+    },
+    {
+      "url": "https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css",
+      "method": "GET",
+      "type": "stylesheet",
+      "requestHeaders": {
+        "origin": "https://bbot.genericgs.com",
+        "sec-ch-ua-platform": "\"Windows\"",
+        "referer": "https://bbot.genericgs.com/",
+        "accept-language": "en-US,en;q=0.9",
+        "sec-ch-ua": "\"Not:A-Brand\";v=\"24\", \"Chromium\";v=\"134\"",
+        "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/134.0.0.0 Safari/537.36",
+        "sec-ch-ua-mobile": "?0",
+        "accept": "text/css,*/*;q=0.1"
+      },
+      "requestBody": null,
+      "responseStatus": 200,
+      "responseHeaders": {
+        "accept-ranges": "bytes",
+        "access-control-allow-origin": "*",
+        "access-control-expose-headers": "*",
+        "age": "3852145",
+        "alt-svc": "h3=\":443\";ma=86400,h3-29=\":443\";ma=86400,h3-27=\":443\";ma=86400",
+        "cache-control": "public, max-age=31536000, s-maxage=31536000, immutable",
+        "content-encoding": "br",
+        "content-length": "30336",
+        "content-type": "text/css; charset=utf-8",
+        "cross-origin-resource-policy": "cross-origin",
+        "date": "Sat, 15 Mar 2025 19:27:26 GMT",
+        "etag": "W/\"2f955-d5HdHzFzoNYsw5wh0q1x/I2tDnI\"",
+        "strict-transport-security": "max-age=31536000; includeSubDomains; preload",
+        "timing-allow-origin": "*",
+        "vary": "Accept-Encoding",
+        "x-cache": "HIT, HIT",
+        "x-content-type-options": "nosniff",
+        "x-jsd-version": "5.2.3",
+        "x-jsd-version-type": "version",
+        "x-served-by": "cache-fra-eddf8230122-FRA, cache-mrs10563-MRS"
+      }
+    },
+    {
+      "url": "https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap",
+      "method": "GET",
+      "type": "stylesheet",
+      "requestHeaders": {
+        "sec-ch-ua-platform": "\"Windows\"",
+        "referer": "https://bbot.genericgs.com/",
+        "accept-language": "en-US,en;q=0.9",
+        "sec-ch-ua": "\"Not:A-Brand\";v=\"24\", \"Chromium\";v=\"134\"",
+        "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/134.0.0.0 Safari/537.36",
+        "sec-ch-ua-mobile": "?0",
+        "accept": "text/css,*/*;q=0.1"
+      },
+      "requestBody": null,
+      "responseStatus": 200,
+      "responseHeaders": {
+        "access-control-allow-origin": "*",
+        "alt-svc": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000",
+        "cache-control": "private, max-age=86400, stale-while-revalidate=604800",
+        "content-encoding": "gzip",
+        "content-type": "text/css; charset=utf-8",
+        "cross-origin-opener-policy": "same-origin-allow-popups",
+        "cross-origin-resource-policy": "cross-origin",
+        "date": "Sat, 15 Mar 2025 19:27:26 GMT",
+        "expires": "Sat, 15 Mar 2025 19:27:26 GMT",
+        "last-modified": "Sat, 15 Mar 2025 18:28:23 GMT",
+        "link": "<https://fonts.gstatic.com>; rel=preconnect; crossorigin",
+        "server": "ESF",
+        "strict-transport-security": "max-age=31536000",
+        "timing-allow-origin": "*",
+        "vary": "Sec-Fetch-Dest, Sec-Fetch-Mode, Sec-Fetch-Site",
+        "x-content-type-options": "nosniff",
+        "x-frame-options": "SAMEORIGIN",
+        "x-xss-protection": "0"
+      }
+    },
+    {
+      "url": "https://bbot.genericgs.com/static/css/main.c14cea97.css",
+      "method": "GET",
+      "type": "stylesheet",
+      "requestHeaders": {
+        "sec-ch-ua-platform": "\"Windows\"",
+        "referer": "https://bbot.genericgs.com/",
+        "accept-language": "en-US,en;q=0.9",
+        "sec-ch-ua": "\"Not:A-Brand\";v=\"24\", \"Chromium\";v=\"134\"",
+        "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/134.0.0.0 Safari/537.36",
+        "sec-ch-ua-mobile": "?0",
+        "accept": "text/css,*/*;q=0.1"
+      },
+      "requestBody": null,
+      "responseStatus": 200,
+      "responseHeaders": {
+        "age": "5520",
+        "alt-svc": "h3=\":443\"; ma=86400",
+        "cache-control": "max-age=14400",
+        "cf-cache-status": "HIT",
+        "cf-ray": "920e687fbd37b86b-ZRH",
+        "content-encoding": "zstd",
+        "content-type": "text/css",
+        "date": "Sat, 15 Mar 2025 19:27:26 GMT",
+        "etag": "W/\"67923c0f-35ad8\"",
+        "last-modified": "Thu, 23 Jan 2025 12:54:39 GMT",
+        "priority": "u=0,i=?0",
+        "server": "cloudflare",
+        "server-timing": "cfExtPri"
+      }
+    },
+    {
+      "url": "https://www.googletagmanager.com/gtag/js?id=AW-11552712065",
+      "method": "GET",
+      "type": "script",
+      "requestHeaders": {
+        "sec-ch-ua-platform": "\"Windows\"",
+        "referer": "https://bbot.genericgs.com/",
+        "accept-language": "en-US,en;q=0.9",
+        "sec-ch-ua": "\"Not:A-Brand\";v=\"24\", \"Chromium\";v=\"134\"",
+        "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/134.0.0.0 Safari/537.36",
+        "sec-ch-ua-mobile": "?0",
+        "accept": "*/*"
+      },
+      "requestBody": null,
+      "responseStatus": 200,
+      "responseHeaders": {
+        "access-control-allow-credentials": "true",
+        "access-control-allow-headers": "Cache-Control",
+        "access-control-allow-origin": "*",
+        "alt-svc": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000",
+        "cache-control": "private, max-age=900",
+        "content-encoding": "br",
+        "content-length": "100123",
+        "content-security-policy-report-only": "script-src 'none'; form-action 'none'; frame-src 'none'; report-uri https://csp.withgoogle.com/csp/scaffolding/ascgcycc:1020:0",
+        "content-type": "application/javascript; charset=UTF-8",
+        "cross-origin-opener-policy-report-only": "same-origin; report-to=ascgcycc:1020:0",
+        "cross-origin-resource-policy": "cross-origin",
+        "date": "Sat, 15 Mar 2025 19:27:26 GMT",
+        "expires": "Sat, 15 Mar 2025 19:27:26 GMT",
+        "last-modified": "Sat, 15 Mar 2025 18:00:00 GMT",
+        "report-to": "{\"group\":\"ascgcycc:1020:0\",\"max_age\":2592000,\"endpoints\":[{\"url\":\"https://csp.withgoogle.com/csp/report-to/scaffolding/ascgcycc:1020:0\"}],}",
+        "server": "Google Tag Manager",
+        "strict-transport-security": "max-age=31536000; includeSubDomains",
+        "vary": "Accept-Encoding",
+        "x-xss-protection": "0"
+      }
+    },
+    {
+      "url": "https://bbot.genericgs.com/static/js/main.c7d839c8.js",
+      "method": "GET",
+      "type": "script",
+      "requestHeaders": {
+        "sec-ch-ua-platform": "\"Windows\"",
+        "referer": "https://bbot.genericgs.com/",
+        "accept-language": "en-US,en;q=0.9",
+        "sec-ch-ua": "\"Not:A-Brand\";v=\"24\", \"Chromium\";v=\"134\"",
+        "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/134.0.0.0 Safari/537.36",
+        "sec-ch-ua-mobile": "?0",
+        "accept": "*/*"
+      },
+      "requestBody": null,
+      "responseStatus": 200,
+      "responseHeaders": {
+        "age": "5520",
+        "alt-svc": "h3=\":443\"; ma=86400",
+        "cache-control": "max-age=14400",
+        "cf-cache-status": "HIT",
+        "cf-ray": "920e6880ef1bb86b-ZRH",
+        "content-encoding": "zstd",
+        "content-type": "application/javascript",
+        "date": "Sat, 15 Mar 2025 19:27:26 GMT",
+        "etag": "W/\"67923c15-a5a26\"",
+        "last-modified": "Thu, 23 Jan 2025 12:54:45 GMT",
+        "nel": "{\"success_fraction\":0,\"report_to\":\"cf-nel\",\"max_age\":604800}",
+        "priority": "u=3,i=?0",
+        "report-to": "{\"endpoints\":[{\"url\":\"https:\\/\\/a.nel.cloudflare.com\\/report\\/v4?s=aOAKjBLu%2FGBke3UDjepr5VFP%2Fi3NYZRT9ZIxyynAC8xP19htc%2BTA7Xd%2F05DuXvyHpb2bWcnKcNy2bjP8oeanzIZf783COlBm9um4veqhw3b5c5Lpb%2F0eQhx9QIRfHhKMbzx%2FVUVqLlUnQbWNshcDAII%3D\"}],\"group\":\"cf-nel\",\"max_age\":604800}",
+        "server": "cloudflare",
+        "server-timing": "cfL4;desc=\"?proto=QUIC&rtt=78965&min_rtt=64850&rtt_var=17317&sent=51&recv=29&lost=0&retrans=0&sent_bytes=43039&recv_bytes=6053&delivery_rate=281585&cwnd=26400&unsent_bytes=0&cid=ed756d1d5d81e3ba&ts=694&x=1\"\ncfExtPri\ncfHdrFlush;dur=0",
+        "vary": "Accept-Encoding"
+      }
+    },
+    {
+      "url": "https://www.google.com/ccm/collect?en=page_view&dl=https%3A%2F%2Fbbot.genericgs.com%2F&scrsrc=www.googletagmanager.com&frm=0&rnd=901278212.1742066848&dt=Bbot&auid=138106068.1742066848&navt=n&npa=0&gtm=45be53d0za200&gcd=13l3l3l3l1l1&dma=0&tag_exp=102015666~102482433~102587591~102717422~102788824~102813109~102814060~102825837~102879719&tft=1742066848423&tfd=1068&apve=1",
+      "method": "POST",
+      "type": "ping",
+      "requestHeaders": {
+        "sec-ch-ua-platform": "\"Windows\"",
+        "referer": "https://bbot.genericgs.com/",
+        "accept-language": "en-US,en;q=0.9",
+        "sec-ch-ua": "\"Not:A-Brand\";v=\"24\", \"Chromium\";v=\"134\"",
+        "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/134.0.0.0 Safari/537.36",
+        "sec-ch-ua-mobile": "?0",
+        "accept": "*/*",
+        "origin": "https://bbot.genericgs.com"
+      },
+      "requestBody": null,
+      "responseStatus": 200,
+      "responseHeaders": {}
+    },
+    {
+      "url": "https://td.doubleclick.net/td/rul/11552712065?random=1742066848411&cv=11&fst=1742066848411&fmt=3&bg=ffffff&guid=ON&async=1&gtm=45be53d0za200&gcd=13l3l3l3l1l1&dma=0&tag_exp=102015666~102482433~102587591~102717422~102788824~102813109~102814060~102825837~102879719&u_w=1920&u_h=1080&url=https%3A%2F%2Fbbot.genericgs.com%2F&hn=www.googleadservices.com&frm=0&tiba=Bbot&npa=0&auid=138106068.1742066848&uaa=x86&uab=64&uafvl=Not%253AA-Brand%3B24.0.0.0%7CChromium%3B134.0.6998.35&uamb=0&uam=&uap=Windows&uapv=10.0.0&uaw=0&fledge=1&data=event%3Dgtag.config",
+      "method": "GET",
+      "type": "document",
+      "requestHeaders": {
+        "accept-language": "en-US,en;q=0.9",
+        "referer": "https://bbot.genericgs.com/",
+        "upgrade-insecure-requests": "1",
+        "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/134.0.0.0 Safari/537.36",
+        "sec-ch-ua": "\"Not:A-Brand\";v=\"24\", \"Chromium\";v=\"134\"",
+        "sec-ch-ua-mobile": "?0",
+        "sec-ch-ua-platform": "\"Windows\"",
+        "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7"
+      },
+      "requestBody": null,
+      "responseStatus": 200,
+      "responseHeaders": {
+        "alt-svc": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000",
+        "cache-control": "no-cache, must-revalidate",
+        "content-encoding": "br",
+        "content-length": "16",
+        "content-type": "text/html; charset=UTF-8",
+        "cross-origin-resource-policy": "cross-origin",
+        "date": "Sat, 15 Mar 2025 19:27:27 GMT",
+        "expires": "Fri, 01 Jan 1990 00:00:00 GMT",
+        "p3p": "policyref=\"https://googleads.g.doubleclick.net/pagead/gcn_p3p_.xml\", CP=\"CURa ADMa DEVa TAIo PSAo PSDo OUR IND UNI PUR INT DEM STA PRE COM NAV OTC NOI DSP COR\"",
+        "pragma": "no-cache",
+        "server": "cafe",
+        "set-cookie": "test_cookie=CheckForPermission; expires=Sat, 15-Mar-2025 19:42:27 GMT; path=/; domain=.doubleclick.net; Secure; SameSite=none",
+        "timing-allow-origin": "*",
+        "x-content-type-options": "nosniff",
+        "x-xss-protection": "0"
+      }
+    },
+    {
+      "url": "https://www.googletagmanager.com/static/service_worker/53b0/sw_iframe.html?origin=https%3A%2F%2Fbbot.genericgs.com",
+      "method": "GET",
+      "type": "document",
+      "requestHeaders": {
+        "accept-language": "en-US,en;q=0.9",
+        "upgrade-insecure-requests": "1",
+        "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/134.0.0.0 Safari/537.36",
+        "sec-ch-ua": "\"Not:A-Brand\";v=\"24\", \"Chromium\";v=\"134\"",
+        "sec-ch-ua-mobile": "?0",
+        "sec-ch-ua-platform": "\"Windows\"",
+        "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7"
+      },
+      "requestBody": null,
+      "responseStatus": 200,
+      "responseHeaders": {
+        "accept-ranges": "bytes",
+        "age": "352688",
+        "alt-svc": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000",
+        "cache-control": "public, max-age=31536000",
+        "content-encoding": "br",
+        "content-length": "1476",
+        "content-type": "text/html",
+        "cross-origin-opener-policy": "same-origin; report-to=\"analytics-container-tag-serving\"",
+        "cross-origin-resource-policy": "cross-origin",
+        "date": "Tue, 11 Mar 2025 17:29:19 GMT",
+        "expires": "Wed, 11 Mar 2026 17:29:19 GMT",
+        "last-modified": "Tue, 11 Mar 2025 08:48:00 GMT",
+        "report-to": "{\"group\":\"analytics-container-tag-serving\",\"max_age\":2592000,\"endpoints\":[{\"url\":\"https://csp.withgoogle.com/csp/report-to/analytics-container-tag-serving\"}]}",
+        "server": "sffe",
+        "service-worker-allowed": "/static/service_worker",
+        "vary": "Accept-Encoding",
+        "x-content-type-options": "nosniff",
+        "x-xss-protection": "0"
+      }
+    },
+    {
+      "url": "https://bbot.genericgs.com/static/media/bbotLogo.9c9246404efcb1bdf491.png",
+      "method": "GET",
+      "type": "image",
+      "requestHeaders": {
+        "sec-ch-ua-platform": "\"Windows\"",
+        "referer": "https://bbot.genericgs.com/",
+        "accept-language": "en-US,en;q=0.9",
+        "sec-ch-ua": "\"Not:A-Brand\";v=\"24\", \"Chromium\";v=\"134\"",
+        "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/134.0.0.0 Safari/537.36",
+        "sec-ch-ua-mobile": "?0",
+        "accept": "image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8",
+        "cookie": "_gcl_au=1.1.138106068.1742066848"
+      },
+      "requestBody": null,
+      "responseStatus": 200,
+      "responseHeaders": {
+        "accept-ranges": "bytes",
+        "age": "5520",
+        "alt-svc": "h3=\":443\"; ma=86400",
+        "cache-control": "max-age=14400",
+        "cf-cache-status": "HIT",
+        "cf-ray": "920e68856f74b86b-ZRH",
+        "content-length": "122002",
+        "content-type": "image/png",
+        "date": "Sat, 15 Mar 2025 19:27:27 GMT",
+        "etag": "\"67923c1d-1dc92\"",
+        "last-modified": "Thu, 23 Jan 2025 12:54:53 GMT",
+        "nel": "{\"success_fraction\":0,\"report_to\":\"cf-nel\",\"max_age\":604800}",
+        "priority": "u=1,i",
+        "report-to": "{\"endpoints\":[{\"url\":\"https:\\/\\/a.nel.cloudflare.com\\/report\\/v4?s=ww86CzL0hEkOMzL3IzXrhYa%2FOPRObSmiVeLorrHhGmI2zznC%2Fr%2FtsRfWYTF7BnA5vCy4kIb2aMER69tTieV7FRDCKffcdIQUnT7hrZmSkDWImFShd7WAIEE%2FjMZHS95ggSUQxvCHUJBrf3uoe2vWrCU%3D\"}],\"group\":\"cf-nel\",\"max_age\":604800}",
+        "server": "cloudflare",
+        "server-timing": "cfL4;desc=\"?proto=QUIC&rtt=85358&min_rtt=64850&rtt_var=13705&sent=243&recv=73&lost=0&retrans=0&sent_bytes=262811&recv_bytes=8459&delivery_rate=1220511&cwnd=132000&unsent_bytes=0&cid=ed756d1d5d81e3ba&ts=1418&x=1\"\ncfExtPri\ncfHdrFlush;dur=0",
+        "vary": "Accept-Encoding"
+      }
+    },
+    {
+      "url": "https://bbot.genericgs.com/static/media/dashboard-image-1.359c5241aa2ce5995e4f.png",
+      "method": "GET",
+      "type": "image",
+      "requestHeaders": {
+        "sec-ch-ua-platform": "\"Windows\"",
+        "referer": "https://bbot.genericgs.com/",
+        "accept-language": "en-US,en;q=0.9",
+        "sec-ch-ua": "\"Not:A-Brand\";v=\"24\", \"Chromium\";v=\"134\"",
+        "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/134.0.0.0 Safari/537.36",
+        "sec-ch-ua-mobile": "?0",
+        "accept": "image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8",
+        "cookie": "_gcl_au=1.1.138106068.1742066848"
+      },
+      "requestBody": null,
+      "responseStatus": 200,
+      "responseHeaders": {
+        "accept-ranges": "bytes",
+        "age": "5520",
+        "alt-svc": "h3=\":443\"; ma=86400",
+        "cache-control": "max-age=14400",
+        "cf-cache-status": "HIT",
+        "cf-ray": "920e68859fe0b86b-ZRH",
+        "content-length": "122258",
+        "content-type": "image/png",
+        "date": "Sat, 15 Mar 2025 19:27:27 GMT",
+        "etag": "\"67923c1e-1dd92\"",
+        "last-modified": "Thu, 23 Jan 2025 12:54:54 GMT",
+        "nel": "{\"success_fraction\":0,\"report_to\":\"cf-nel\",\"max_age\":604800}",
+        "priority": "u=3,i",
+        "report-to": "{\"endpoints\":[{\"url\":\"https:\\/\\/a.nel.cloudflare.com\\/report\\/v4?s=%2F18WSY9aiOAXZwZ1JLXUkOlLCYlrsZQQHQuhy6hxl7cVUjHEn%2F9NNzYdd6HI9c%2F8QyPBEpSNO3pItBvjOBR%2Bu12VnPHRZ4C%2FWfaOJvqzqj7r33eQChwGrKnmJFnujVNDR6RYYPW%2BjiXkKCpknGvh65w%3D\"}],\"group\":\"cf-nel\",\"max_age\":604800}",
+        "server": "cloudflare",
+        "server-timing": "cfL4;desc=\"?proto=QUIC&rtt=85358&min_rtt=64850&rtt_var=13705&sent=352&recv=78&lost=0&retrans=0&sent_bytes=388326&recv_bytes=10922&delivery_rate=1220511&cwnd=132000&unsent_bytes=0&cid=ed756d1d5d81e3ba&ts=1446&x=1\"\ncfExtPri\ncfHdrFlush;dur=0",
+        "vary": "Accept-Encoding"
+      }
+    },
+    {
+      "url": "https://bbot.genericgs.com/static/media/dashboard-image-2.0d362f12d88aba506555.PNG",
+      "method": "GET",
+      "type": "image",
+      "requestHeaders": {
+        "sec-ch-ua-platform": "\"Windows\"",
+        "referer": "https://bbot.genericgs.com/",
+        "accept-language": "en-US,en;q=0.9",
+        "sec-ch-ua": "\"Not:A-Brand\";v=\"24\", \"Chromium\";v=\"134\"",
+        "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/134.0.0.0 Safari/537.36",
+        "sec-ch-ua-mobile": "?0",
+        "accept": "image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8",
+        "cookie": "_gcl_au=1.1.138106068.1742066848"
+      },
+      "requestBody": null,
+      "responseStatus": 200,
+      "responseHeaders": {
+        "accept-ranges": "bytes",
+        "age": "5521",
+        "alt-svc": "h3=\":443\"; ma=86400",
+        "cache-control": "max-age=14400",
+        "cf-cache-status": "HIT",
+        "cf-ray": "920e68859fe3b86b-ZRH",
+        "content-length": "9789",
+        "content-type": "image/png",
+        "date": "Sat, 15 Mar 2025 19:27:27 GMT",
+        "etag": "\"67923c1e-263d\"",
+        "last-modified": "Thu, 23 Jan 2025 12:54:54 GMT",
+        "nel": "{\"success_fraction\":0,\"report_to\":\"cf-nel\",\"max_age\":604800}",
+        "priority": "u=3,i",
+        "report-to": "{\"endpoints\":[{\"url\":\"https:\\/\\/a.nel.cloudflare.com\\/report\\/v4?s=OFoWMP7mg9IKB7Ae3xZ%2B5Ka3a2d98N9dGrwKXzYg%2BP2zV5J%2FXirPKxFOMkNXcCeEYsDMAUO6cObX2Vscm3dh%2F01ROS%2Bau4qSL4%2FLYiNG1IEbMysAFJS449QAJ5S4YTufoOZwAFMk5jh0WAG7X9V2Xos%3D\"}],\"group\":\"cf-nel\",\"max_age\":604800}",
+        "server": "cloudflare",
+        "server-timing": "cfL4;desc=\"?proto=QUIC&rtt=85358&min_rtt=64850&rtt_var=13705&sent=358&recv=78&lost=0&retrans=0&sent_bytes=394907&recv_bytes=10922&delivery_rate=1220511&cwnd=132000&unsent_bytes=0&cid=ed756d1d5d81e3ba&ts=1447&x=1\"\ncfExtPri\ncfHdrFlush;dur=44",
+        "vary": "Accept-Encoding"
+      }
+    },
+    {
+      "url": "https://bbot.genericgs.com/static/media/dashboard-image-3.3ec29975950d6502ce00.PNG",
+      "method": "GET",
+      "type": "image",
+      "requestHeaders": {
+        "sec-ch-ua-platform": "\"Windows\"",
+        "referer": "https://bbot.genericgs.com/",
+        "accept-language": "en-US,en;q=0.9",
+        "sec-ch-ua": "\"Not:A-Brand\";v=\"24\", \"Chromium\";v=\"134\"",
+        "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/134.0.0.0 Safari/537.36",
+        "sec-ch-ua-mobile": "?0",
+        "accept": "image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8",
+        "cookie": "_gcl_au=1.1.138106068.1742066848"
+      },
+      "requestBody": null,
+      "responseStatus": 200,
+      "responseHeaders": {
+        "accept-ranges": "bytes",
+        "age": "5521",
+        "alt-svc": "h3=\":443\"; ma=86400",
+        "cache-control": "max-age=14400",
+        "cf-cache-status": "HIT",
+        "cf-ray": "920e6885afe6b86b-ZRH",
+        "content-length": "36415",
+        "content-type": "image/png",
+        "date": "Sat, 15 Mar 2025 19:27:27 GMT",
+        "etag": "\"67923c1f-8e3f\"",
+        "last-modified": "Thu, 23 Jan 2025 12:54:55 GMT",
+        "nel": "{\"success_fraction\":0,\"report_to\":\"cf-nel\",\"max_age\":604800}",
+        "priority": "u=3,i",
+        "report-to": "{\"endpoints\":[{\"url\":\"https:\\/\\/a.nel.cloudflare.com\\/report\\/v4?s=I7K%2FtyRNCUk%2BIJJP4%2BFEUG%2BOjZ4Pq%2FYWhMW%2FRp9EKq2hBCa74ygroBpMbP%2FClFSVIU7dwjUsN%2BUwbkcA8UPo7GLAOd9Rq18ATMWlg5ZJfMjskkd9Ih3asAXJrLe1HwLmFej%2FyKf1DapVjnyEdugmZ5c%3D\"}],\"group\":\"cf-nel\",\"max_age\":604800}",
+        "server": "cloudflare",
+        "server-timing": "cfL4;desc=\"?proto=QUIC&rtt=85358&min_rtt=64850&rtt_var=13705&sent=358&recv=78&lost=0&retrans=0&sent_bytes=394907&recv_bytes=10922&delivery_rate=1220511&cwnd=132000&unsent_bytes=0&cid=ed756d1d5d81e3ba&ts=1449&x=1\"\ncfExtPri\ncfHdrFlush;dur=42",
+        "vary": "Accept-Encoding"
+      }
+    },
+    {
+      "url": "https://bbot.genericgs.com/static/media/dashboard-image-4.eaad94aa89cff6df8b0e.PNG",
+      "method": "GET",
+      "type": "image",
+      "requestHeaders": {
+        "sec-ch-ua-platform": "\"Windows\"",
+        "referer": "https://bbot.genericgs.com/",
+        "accept-language": "en-US,en;q=0.9",
+        "sec-ch-ua": "\"Not:A-Brand\";v=\"24\", \"Chromium\";v=\"134\"",
+        "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/134.0.0.0 Safari/537.36",
+        "sec-ch-ua-mobile": "?0",
+        "accept": "image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8",
+        "cookie": "_gcl_au=1.1.138106068.1742066848"
+      },
+      "requestBody": null,
+      "responseStatus": 200,
+      "responseHeaders": {
+        "accept-ranges": "bytes",
+        "age": "5521",
+        "alt-svc": "h3=\":443\"; ma=86400",
+        "cache-control": "max-age=14400",
+        "cf-cache-status": "HIT",
+        "cf-ray": "920e6885afe7b86b-ZRH",
+        "content-length": "51295",
+        "content-type": "image/png",
+        "date": "Sat, 15 Mar 2025 19:27:27 GMT",
+        "etag": "\"67923c1f-c85f\"",
+        "last-modified": "Thu, 23 Jan 2025 12:54:55 GMT",
+        "nel": "{\"success_fraction\":0,\"report_to\":\"cf-nel\",\"max_age\":604800}",
+        "priority": "u=3,i",
+        "report-to": "{\"endpoints\":[{\"url\":\"https:\\/\\/a.nel.cloudflare.com\\/report\\/v4?s=EY%2FQ4cDW0QM5uPKSQ4Yfbhsfm%2BsWbm8QriQ6N2QIuiqB9sC%2FgOGA1cY90nRvIDPQXpKL0Yj2tcvnc4mf2kTbWepJ4SxtfV9CoqzHvdl07XC7afnUtWYffjKOJrCj33JHmQ%2F2fMEAByiqheEqzVx05rw%3D\"}],\"group\":\"cf-nel\",\"max_age\":604800}",
+        "server": "cloudflare",
+        "server-timing": "cfL4;desc=\"?proto=QUIC&rtt=85358&min_rtt=64850&rtt_var=13705&sent=358&recv=78&lost=0&retrans=0&sent_bytes=394907&recv_bytes=10922&delivery_rate=1220511&cwnd=132000&unsent_bytes=0&cid=ed756d1d5d81e3ba&ts=1449&x=1\"\ncfExtPri\ncfHdrFlush;dur=42",
+        "vary": "Accept-Encoding"
+      }
+    },
+    {
+      "url": "https://bbot.genericgs.com/static/media/dashboard-image-5.bbe5877e421a620ca1e3.PNG",
+      "method": "GET",
+      "type": "image",
+      "requestHeaders": {
+        "sec-ch-ua-platform": "\"Windows\"",
+        "referer": "https://bbot.genericgs.com/",
+        "accept-language": "en-US,en;q=0.9",
+        "sec-ch-ua": "\"Not:A-Brand\";v=\"24\", \"Chromium\";v=\"134\"",
+        "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/134.0.0.0 Safari/537.36",
+        "sec-ch-ua-mobile": "?0",
+        "accept": "image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8",
+        "cookie": "_gcl_au=1.1.138106068.1742066848"
+      },
+      "requestBody": null,
+      "responseStatus": 200,
+      "responseHeaders": {
+        "accept-ranges": "bytes",
+        "age": "5521",
+        "alt-svc": "h3=\":443\"; ma=86400",
+        "cache-control": "max-age=14400",
+        "cf-cache-status": "HIT",
+        "cf-ray": "920e6885afe9b86b-ZRH",
+        "content-length": "31335",
+        "content-type": "image/png",
+        "date": "Sat, 15 Mar 2025 19:27:27 GMT",
+        "etag": "\"67923c20-7a67\"",
+        "last-modified": "Thu, 23 Jan 2025 12:54:56 GMT",
+        "nel": "{\"success_fraction\":0,\"report_to\":\"cf-nel\",\"max_age\":604800}",
+        "priority": "u=3,i",
+        "report-to": "{\"endpoints\":[{\"url\":\"https:\\/\\/a.nel.cloudflare.com\\/report\\/v4?s=CVmgIUh7ygrjBmDLgpDBeUe2JmoIjbhRPaK6DrsQlzc3l9DxbMQ4RXQdG0mtZwl0W%2Fyrn9I8qlklx8l2mPmzQwcxf%2BKMHfyHuVW%2F3vmPsioM93yYNfZiXmMoeQuWDkUUcmIGVU9cYYvLdGhZ9xjB3N0%3D\"}],\"group\":\"cf-nel\",\"max_age\":604800}",
+        "server": "cloudflare",
+        "server-timing": "cfL4;desc=\"?proto=QUIC&rtt=85358&min_rtt=64850&rtt_var=13705&sent=358&recv=78&lost=0&retrans=0&sent_bytes=394907&recv_bytes=10922&delivery_rate=1220511&cwnd=132000&unsent_bytes=0&cid=ed756d1d5d81e3ba&ts=1452&x=1\"\ncfExtPri\ncfHdrFlush;dur=39",
+        "vary": "Accept-Encoding"
+      }
+    },
+    {
+      "url": "https://fonts.gstatic.com/s/rubik/v28/iJWKBXyIfDnIV7nBrXw.woff2",
+      "method": "GET",
+      "type": "font",
+      "requestHeaders": {
+        "origin": "https://bbot.genericgs.com",
+        "sec-ch-ua-platform": "\"Windows\"",
+        "referer": "https://fonts.googleapis.com/",
+        "accept-language": "en-US,en;q=0.9",
+        "sec-ch-ua": "\"Not:A-Brand\";v=\"24\", \"Chromium\";v=\"134\"",
+        "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/134.0.0.0 Safari/537.36",
+        "sec-ch-ua-mobile": "?0",
+        "accept": "*/*"
+      },
+      "requestBody": null,
+      "responseStatus": 200,
+      "responseHeaders": {
+        "accept-ranges": "bytes",
+        "access-control-allow-origin": "*",
+        "age": "192399",
+        "alt-svc": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000",
+        "cache-control": "public, max-age=31536000",
+        "content-length": "35448",
+        "content-security-policy-report-only": "require-trusted-types-for 'script'; report-uri https://csp.withgoogle.com/csp/apps-themes",
+        "content-type": "font/woff2",
+        "cross-origin-opener-policy": "same-origin; report-to=\"apps-themes\"",
+        "cross-origin-resource-policy": "cross-origin",
+        "date": "Thu, 13 Mar 2025 14:00:48 GMT",
+        "expires": "Fri, 13 Mar 2026 14:00:48 GMT",
+        "last-modified": "Thu, 29 Jun 2023 16:14:39 GMT",
+        "report-to": "{\"group\":\"apps-themes\",\"max_age\":2592000,\"endpoints\":[{\"url\":\"https://csp.withgoogle.com/csp/report-to/apps-themes\"}]}",
+        "server": "sffe",
+        "timing-allow-origin": "*",
+        "x-content-type-options": "nosniff",
+        "x-xss-protection": "0"
+      }
+    },
+    {
+      "url": "https://fonts.gstatic.com/s/rubik/v28/iJWKBXyIfDnIV7nDrXyi0A.woff2",
+      "method": "GET",
+      "type": "font",
+      "requestHeaders": {
+        "origin": "https://bbot.genericgs.com",
+        "sec-ch-ua-platform": "\"Windows\"",
+        "referer": "https://fonts.googleapis.com/",
+        "accept-language": "en-US,en;q=0.9",
+        "sec-ch-ua": "\"Not:A-Brand\";v=\"24\", \"Chromium\";v=\"134\"",
+        "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/134.0.0.0 Safari/537.36",
+        "sec-ch-ua-mobile": "?0",
+        "accept": "*/*"
+      },
+      "requestBody": null,
+      "responseStatus": 200,
+      "responseHeaders": {
+        "accept-ranges": "bytes",
+        "access-control-allow-origin": "*",
+        "age": "393878",
+        "alt-svc": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000",
+        "cache-control": "public, max-age=31536000",
+        "content-length": "8704",
+        "content-security-policy-report-only": "require-trusted-types-for 'script'; report-uri https://csp.withgoogle.com/csp/apps-themes",
+        "content-type": "font/woff2",
+        "cross-origin-opener-policy": "same-origin; report-to=\"apps-themes\"",
+        "cross-origin-resource-policy": "cross-origin",
+        "date": "Tue, 11 Mar 2025 06:02:49 GMT",
+        "expires": "Wed, 11 Mar 2026 06:02:49 GMT",
+        "last-modified": "Thu, 29 Jun 2023 16:18:25 GMT",
+        "report-to": "{\"group\":\"apps-themes\",\"max_age\":2592000,\"endpoints\":[{\"url\":\"https://csp.withgoogle.com/csp/report-to/apps-themes\"}]}",
+        "server": "sffe",
+        "timing-allow-origin": "*",
+        "x-content-type-options": "nosniff",
+        "x-xss-protection": "0"
+      }
+    },
+    {
+      "url": "https://fonts.gstatic.com/s/rubik/v28/iJWEBXyIfDnIV7nEnX661A.woff2",
+      "method": "GET",
+      "type": "font",
+      "requestHeaders": {
+        "origin": "https://bbot.genericgs.com",
+        "sec-ch-ua-platform": "\"Windows\"",
+        "referer": "https://fonts.googleapis.com/",
+        "accept-language": "en-US,en;q=0.9",
+        "sec-ch-ua": "\"Not:A-Brand\";v=\"24\", \"Chromium\";v=\"134\"",
+        "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/134.0.0.0 Safari/537.36",
+        "sec-ch-ua-mobile": "?0",
+        "accept": "*/*"
+      },
+      "requestBody": null,
+      "responseStatus": 200,
+      "responseHeaders": {
+        "accept-ranges": "bytes",
+        "access-control-allow-origin": "*",
+        "age": "192387",
+        "alt-svc": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000",
+        "cache-control": "public, max-age=31536000",
+        "content-length": "36408",
+        "content-security-policy-report-only": "require-trusted-types-for 'script'; report-uri https://csp.withgoogle.com/csp/apps-themes",
+        "content-type": "font/woff2",
+        "cross-origin-opener-policy": "same-origin; report-to=\"apps-themes\"",
+        "cross-origin-resource-policy": "cross-origin",
+        "date": "Thu, 13 Mar 2025 14:01:00 GMT",
+        "expires": "Fri, 13 Mar 2026 14:01:00 GMT",
+        "last-modified": "Thu, 29 Jun 2023 16:10:21 GMT",
+        "report-to": "{\"group\":\"apps-themes\",\"max_age\":2592000,\"endpoints\":[{\"url\":\"https://csp.withgoogle.com/csp/report-to/apps-themes\"}]}",
+        "server": "sffe",
+        "timing-allow-origin": "*",
+        "x-content-type-options": "nosniff",
+        "x-xss-protection": "0"
+      }
+    },
+    {
+      "url": "https://googleads.g.doubleclick.net/pagead/viewthroughconversion/11552712065/?random=1742066848411&cv=11&fst=1742066848411&bg=ffffff&guid=ON&async=1&gtm=45be53d0za200&gcd=13l3l3l3l1l1&dma=0&tag_exp=102015666~102482433~102587591~102717422~102788824~102813109~102814060~102825837~102879719&u_w=1920&u_h=1080&url=https%3A%2F%2Fbbot.genericgs.com%2F&hn=www.googleadservices.com&frm=0&tiba=Bbot&npa=0&auid=138106068.1742066848&uaa=x86&uab=64&uafvl=Not%253AA-Brand%3B24.0.0.0%7CChromium%3B134.0.6998.35&uamb=0&uam=&uap=Windows&uapv=10.0.0&uaw=0&fledge=1&data=event%3Dgtag.config&rfmt=3&fmt=4",
+      "method": "GET",
+      "type": "script",
+      "requestHeaders": {
+        "sec-ch-ua-platform": "\"Windows\"",
+        "referer": "https://bbot.genericgs.com/",
+        "accept-language": "en-US,en;q=0.9",
+        "sec-ch-ua": "\"Not:A-Brand\";v=\"24\", \"Chromium\";v=\"134\"",
+        "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/134.0.0.0 Safari/537.36",
+        "sec-ch-ua-mobile": "?0",
+        "accept": "*/*"
+      },
+      "requestBody": null,
+      "responseStatus": 200,
+      "responseHeaders": {
+        "alt-svc": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000",
+        "cache-control": "no-cache, must-revalidate",
+        "content-disposition": "attachment; filename=\"f.txt\"",
+        "content-encoding": "br",
+        "content-length": "1924",
+        "content-type": "text/javascript; charset=UTF-8",
+        "cross-origin-resource-policy": "cross-origin",
+        "date": "Sat, 15 Mar 2025 19:27:27 GMT",
+        "expires": "Fri, 01 Jan 1990 00:00:00 GMT",
+        "p3p": "policyref=\"https://googleads.g.doubleclick.net/pagead/gcn_p3p_.xml\", CP=\"CURa ADMa DEVa TAIo PSAo PSDo OUR IND UNI PUR INT DEM STA PRE COM NAV OTC NOI DSP COR\"",
+        "pragma": "no-cache",
+        "server": "cafe",
+        "set-cookie": "test_cookie=CheckForPermission; expires=Sat, 15-Mar-2025 19:42:27 GMT; path=/; domain=.doubleclick.net; Secure; SameSite=none",
+        "timing-allow-origin": "*",
+        "x-content-type-options": "nosniff",
+        "x-xss-protection": "0"
+      }
+    },
+    {
+      "url": "https://fonts.gstatic.com/s/rubik/v28/iJWKBXyIfDnIV7nBrXw.woff2",
+      "method": "GET",
+      "type": "font",
+      "requestHeaders": {
+        "origin": "https://bbot.genericgs.com",
+        "sec-ch-ua-platform": "\"Windows\"",
+        "referer": "https://fonts.googleapis.com/",
+        "accept-language": "en-US,en;q=0.9",
+        "sec-ch-ua": "\"Not:A-Brand\";v=\"24\", \"Chromium\";v=\"134\"",
+        "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/134.0.0.0 Safari/537.36",
+        "sec-ch-ua-mobile": "?0",
+        "accept": "*/*"
+      },
+      "requestBody": null
+    },
+    {
+      "url": "https://fonts.gstatic.com/s/rubik/v28/iJWKBXyIfDnIV7nDrXyi0A.woff2",
+      "method": "GET",
+      "type": "font",
+      "requestHeaders": {
+        "origin": "https://bbot.genericgs.com",
+        "sec-ch-ua-platform": "\"Windows\"",
+        "referer": "https://fonts.googleapis.com/",
+        "accept-language": "en-US,en;q=0.9",
+        "sec-ch-ua": "\"Not:A-Brand\";v=\"24\", \"Chromium\";v=\"134\"",
+        "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/134.0.0.0 Safari/537.36",
+        "sec-ch-ua-mobile": "?0",
+        "accept": "*/*"
+      },
+      "requestBody": null
+    },
+    {
+      "url": "https://fonts.gstatic.com/s/rubik/v28/iJWEBXyIfDnIV7nEnX661A.woff2",
+      "method": "GET",
+      "type": "font",
+      "requestHeaders": {
+        "origin": "https://bbot.genericgs.com",
+        "sec-ch-ua-platform": "\"Windows\"",
+        "referer": "https://fonts.googleapis.com/",
+        "accept-language": "en-US,en;q=0.9",
+        "sec-ch-ua": "\"Not:A-Brand\";v=\"24\", \"Chromium\";v=\"134\"",
+        "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/134.0.0.0 Safari/537.36",
+        "sec-ch-ua-mobile": "?0",
+        "accept": "*/*"
+      },
+      "requestBody": null
+    },
+    {
+      "url": "https://www.google.com/pagead/1p-user-list/11552712065/?random=1742066848411&cv=11&fst=1742065200000&bg=ffffff&guid=ON&async=1&gtm=45be53d0za200&gcd=13l3l3l3l1l1&dma=0&tag_exp=102015666~102482433~102587591~102717422~102788824~102813109~102814060~102825837~102879719&u_w=1920&u_h=1080&url=https%3A%2F%2Fbbot.genericgs.com%2F&hn=www.googleadservices.com&frm=0&tiba=Bbot&npa=0&auid=138106068.1742066848&uaa=x86&uab=64&uafvl=Not%253AA-Brand%3B24.0.0.0%7CChromium%3B134.0.6998.35&uamb=0&uam=&uap=Windows&uapv=10.0.0&uaw=0&fledge=1&data=event%3Dgtag.config&rfmt=3&fmt=3&is_vtc=1&cid=CAQSGwCjtLzMe4NjxCqUzEjIuHG87Kzd-qF9C3ZhiQ&random=731356687&rmt_tld=0&ipr=y",
+      "method": "GET",
+      "type": "image",
+      "requestHeaders": {
+        "sec-ch-ua-platform": "\"Windows\"",
+        "referer": "https://bbot.genericgs.com/",
+        "accept-language": "en-US,en;q=0.9",
+        "sec-ch-ua": "\"Not:A-Brand\";v=\"24\", \"Chromium\";v=\"134\"",
+        "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/134.0.0.0 Safari/537.36",
+        "sec-ch-ua-mobile": "?0",
+        "accept": "image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8"
+      },
+      "requestBody": null,
+      "responseStatus": 200,
+      "responseHeaders": {
+        "alt-svc": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000",
+        "cache-control": "no-cache, no-store, must-revalidate",
+        "content-length": "42",
+        "content-security-policy": "script-src 'none'; object-src 'none'",
+        "content-type": "image/gif",
+        "cross-origin-resource-policy": "cross-origin",
+        "date": "Sat, 15 Mar 2025 19:27:27 GMT",
+        "expires": "Fri, 01 Jan 1990 00:00:00 GMT",
+        "p3p": "policyref=\"https://www.googleadservices.com/pagead/p3p.xml\", CP=\"NOI DEV PSA PSD IVA IVD OTP OUR OTR IND OTC\"",
+        "pragma": "no-cache",
+        "server": "cafe",
+        "timing-allow-origin": "*",
+        "x-content-type-options": "nosniff",
+        "x-xss-protection": "0"
+      }
+    },
+    {
+      "url": "https://www.google.co.il/pagead/1p-user-list/11552712065/?random=1742066848411&cv=11&fst=1742065200000&bg=ffffff&guid=ON&async=1&gtm=45be53d0za200&gcd=13l3l3l3l1l1&dma=0&tag_exp=102015666~102482433~102587591~102717422~102788824~102813109~102814060~102825837~102879719&u_w=1920&u_h=1080&url=https%3A%2F%2Fbbot.genericgs.com%2F&hn=www.googleadservices.com&frm=0&tiba=Bbot&npa=0&auid=138106068.1742066848&uaa=x86&uab=64&uafvl=Not%253AA-Brand%3B24.0.0.0%7CChromium%3B134.0.6998.35&uamb=0&uam=&uap=Windows&uapv=10.0.0&uaw=0&fledge=1&data=event%3Dgtag.config&rfmt=3&fmt=3&is_vtc=1&cid=CAQSGwCjtLzMe4NjxCqUzEjIuHG87Kzd-qF9C3ZhiQ&random=731356687&rmt_tld=1&ipr=y",
+      "method": "GET",
+      "type": "image",
+      "requestHeaders": {
+        "sec-ch-ua-platform": "\"Windows\"",
+        "referer": "https://bbot.genericgs.com/",
+        "accept-language": "en-US,en;q=0.9",
+        "sec-ch-ua": "\"Not:A-Brand\";v=\"24\", \"Chromium\";v=\"134\"",
+        "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/134.0.0.0 Safari/537.36",
+        "sec-ch-ua-mobile": "?0",
+        "accept": "image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8"
+      },
+      "requestBody": null,
+      "responseStatus": 200,
+      "responseHeaders": {
+        "alt-svc": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000",
+        "cache-control": "no-cache, no-store, must-revalidate",
+        "content-length": "42",
+        "content-security-policy": "script-src 'none'; object-src 'none'",
+        "content-type": "image/gif",
+        "cross-origin-resource-policy": "cross-origin",
+        "date": "Sat, 15 Mar 2025 19:27:27 GMT",
+        "expires": "Fri, 01 Jan 1990 00:00:00 GMT",
+        "p3p": "policyref=\"https://www.googleadservices.com/pagead/p3p.xml\", CP=\"NOI DEV PSA PSD IVA IVD OTP OUR OTR IND OTC\"",
+        "pragma": "no-cache",
+        "server": "cafe",
+        "timing-allow-origin": "*",
+        "x-content-type-options": "nosniff",
+        "x-xss-protection": "0"
+      }
+    },
+    {
+      "url": "https://www.googletagmanager.com/a?v=3&t=l&pid=555016234&rv=53d0&tag_exp=102015666~102482433~102587591~102717422~102788824~102813109~102814060~102825837~102879719&u=AAAAAAAAAAAAACCA&ut=Ag&h=Ag&gtm=45be53d0za200&ccid=_AW-11552712065&cid=AW-11552712065&l=L701.S7.Y3.B46.E890.I701.TC1.HTC0~gtm.init_consent.S4.V2.E50~gtm.init.S0.V0.E45~gtm.js.S1.V0.E130.TS5rep.TI1.TE2~gtm.dom.S0.V0.E87~gtm.load.S0.V0.E2~AWCT376",
+      "method": "GET",
+      "type": "image",
+      "requestHeaders": {
+        "sec-ch-ua-platform": "\"Windows\"",
+        "referer": "https://bbot.genericgs.com/",
+        "accept-language": "en-US,en;q=0.9",
+        "sec-ch-ua": "\"Not:A-Brand\";v=\"24\", \"Chromium\";v=\"134\"",
+        "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/134.0.0.0 Safari/537.36",
+        "sec-ch-ua-mobile": "?0",
+        "accept": "image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8"
+      },
+      "requestBody": null,
+      "responseStatus": 200,
+      "responseHeaders": {
+        "alt-svc": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000",
+        "content-length": "0",
+        "content-security-policy-report-only": "script-src 'none'; form-action 'none'; frame-src 'none'; report-uri https://csp.withgoogle.com/csp/scaffolding/ascgcycc:836:0",
+        "content-type": "text/html",
+        "cross-origin-opener-policy-report-only": "same-origin; report-to=ascgcycc:836:0",
+        "date": "Sat, 15 Mar 2025 19:27:28 GMT",
+        "report-to": "{\"group\":\"ascgcycc:836:0\",\"max_age\":2592000,\"endpoints\":[{\"url\":\"https://csp.withgoogle.com/csp/report-to/scaffolding/ascgcycc:836:0\"}],}",
+        "server": "Google Tag Manager",
+        "x-xss-protection": "0"
+      }
+    },
+    {
+      "url": "https://bbot.genericgs.com/favicon.ico",
+      "method": "GET",
+      "type": "other",
+      "requestHeaders": {
+        "sec-ch-ua-platform": "\"Windows\"",
+        "referer": "https://bbot.genericgs.com/",
+        "accept-language": "en-US,en;q=0.9",
+        "sec-ch-ua": "\"Not:A-Brand\";v=\"24\", \"Chromium\";v=\"134\"",
+        "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/134.0.0.0 Safari/537.36",
+        "sec-ch-ua-mobile": "?0",
+        "accept": "image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8",
+        "cookie": "_gcl_au=1.1.138106068.1742066848"
+      },
+      "requestBody": null,
+      "responseStatus": 200,
+      "responseHeaders": {
+        "age": "5521",
+        "alt-svc": "h3=\":443\"; ma=86400",
+        "cache-control": "max-age=14400",
+        "cf-cache-status": "HIT",
+        "cf-ray": "920e68889cfdb86b-ZRH",
+        "content-encoding": "zstd",
+        "content-type": "image/x-icon",
+        "date": "Sat, 15 Mar 2025 19:27:28 GMT",
+        "etag": "W/\"67923c0d-1dc92\"",
+        "last-modified": "Thu, 23 Jan 2025 12:54:37 GMT",
+        "priority": "u=1,i",
+        "server": "cloudflare",
+        "server-timing": "cfExtPri"
+      }
+    }
+  ],
+  "errors": [
+    {
+      "message": "Click failed",
+      "error": "page.waitForTimeout is not a function"
+    },
+    {
+      "message": "Click failed",
+      "error": "page.waitForTimeout is not a function"
+    },
+    {
+      "message": "Click failed",
+      "error": "page.waitForTimeout is not a function"
+    },
+    {
+      "message": "Click failed",
+      "error": "page.waitForTimeout is not a function"
+    },
+    {
+      "message": "Click failed",
+      "error": "page.waitForTimeout is not a function"
+    },
+    {
+      "message": "Click failed",
+      "error": "page.waitForTimeout is not a function"
+    },
+    {
+      "message": "Click failed",
+      "error": "page.waitForTimeout is not a function"
+    },
+    {
+      "message": "Click failed",
+      "error": "page.waitForTimeout is not a function"
+    },
+    {
+      "message": "Click failed",
+      "error": "page.waitForTimeout is not a function"
+    },
+    {
+      "message": "Click failed",
+      "error": "page.waitForTimeout is not a function"
+    },
+    {
+      "message": "Click failed",
+      "error": "page.waitForTimeout is not a function"
+    }
+  ]
+}

