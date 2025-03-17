@@ -212,3 +212,20 @@ button:hover {
 @keyframes spin {
     to { transform: rotate(360deg); }
 }
+
+.logs-container {
+    background-color: #1e1e1e;
+    color: #f0f0f0;
+    font-family: monospace;
+    padding: 10px;
+    border-radius: 5px;
+    height: 200px;
+    overflow-y: auto;
+    margin-bottom: 20px;
+}
+
+.log-entry {
+    margin: 5px 0;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+}

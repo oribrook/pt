@@ -2,6 +2,152 @@ import axios from 'axios';
 
 const delay = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 
+async function testOpenRedirect(url) {
+    const results = { warnings: [], notes: [] };
+
+    try {
+        const testUrl = `${url}?redirect=https://evil.com`;
+        const response = await axios.get(testUrl, { maxRedirects: 0 });
+
+        if (response.headers.location && response.headers.location.includes('evil.com')) {
+            results.warnings.push('Potential open redirect vulnerability');
+            results.notes.push(`Redirect header points to: ${response.headers.location}`);
+        } else {
+            results.notes.push('No open redirect detected');
+        }
+    } catch (error) {
+        if (error.response?.status >= 300 && error.response?.status < 400) {
+            results.warnings.push('Potential open redirect found');
+            results.notes.push(`Redirect detected to: ${error.response.headers.location}`);
+        } else {
+            results.notes.push('No open redirect behavior detected');
+        }
+    }
+
+    return {
+        passed: results.warnings.length === 0,
+        ...results,
+        notes: results.notes.join(', ')
+    };
+}
+
+async function testSecurityHeaders(url) {
+    const results = { warnings: [], notes: [] };
+
+    try {
+        const response = await axios.get(url);
+        const headers = response.headers;
+
+        const requiredHeaders = {
+            'strict-transport-security': 'HSTS missing',
+            'x-content-type-options': 'X-Content-Type-Options missing',
+            'referrer-policy': 'Referrer-Policy missing',
+            'x-xss-protection': 'X-XSS-Protection missing or weak'
+        };
+
+        for (const [header, warning] of Object.entries(requiredHeaders)) {
+            if (!headers[header]) {
+                results.warnings.push(warning);
+            } else {
+                results.notes.push(`${header}: ${headers[header]}`);
+            }
+        }
+    } catch (error) {
+        results.notes.push(`Failed to fetch headers: ${error.message}`);
+    }
+
+    return {
+        passed: results.warnings.length === 0,
+        ...results,
+        notes: results.notes.join(', ')
+    };
+}
+
+async function testSSRF(url) {
+    const results = { warnings: [], notes: [] };
+
+    try {
+        const payload = `${url}?url=http://169.254.169.254/latest/meta-data/`;
+        const response = await axios.get(payload, { timeout: 3000 });
+
+        if (response.status === 200) {
+            results.warnings.push('Potential SSRF vulnerability');
+            results.notes.push('Server responded to internal AWS metadata request');
+        } else {
+            results.notes.push('No SSRF behavior detected');
+        }
+    } catch (error) {
+        if (error.code === 'ECONNABORTED') {
+            results.notes.push('SSRF request timed out (likely safe)');
+        } else {
+            results.notes.push('Server rejected internal request (likely safe)');
+        }
+    }
+
+    return {
+        passed: results.warnings.length === 0,
+        ...results,
+        notes: results.notes.join(', ')
+    };
+}
+
+async function testInsecureCookies(url) {
+    const results = { warnings: [], notes: [] };
+
+    try {
+        const response = await axios.get(url);
+        const cookies = response.headers['set-cookie'] || [];
+
+        if (cookies.length === 0) {
+            results.notes.push('No cookies set by the server');
+        }
+
+        for (const cookie of cookies) {
+            if (!cookie.includes('HttpOnly')) {
+                results.warnings.push('Cookie missing HttpOnly flag');
+            }
+            if (!cookie.includes('Secure')) {
+                results.warnings.push('Cookie missing Secure flag');
+            }
+            if (!cookie.includes('SameSite')) {
+                results.warnings.push('Cookie missing SameSite attribute');
+            }
+        }
+    } catch (error) {
+        results.notes.push(`Failed to fetch cookies: ${error.message}`);
+    }
+
+    return {
+        passed: results.warnings.length === 0,
+        ...results,
+        notes: results.notes.join(', ')
+    };
+}
+
+async function testClickjacking(url) {
+    const results = { warnings: [], notes: [] };
+
+    try {
+        const response = await axios.get(url);
+        const headers = response.headers;
+
+        if (!headers['x-frame-options'] && !headers['content-security-policy']) {
+            results.warnings.push('No X-Frame-Options or CSP frame restrictions');
+            results.notes.push('Website might be vulnerable to clickjacking');
+        } else {
+            results.notes.push('X-Frame-Options or CSP detected');
+        }
+    } catch (error) {
+        results.notes.push(`Failed to fetch security headers: ${error.message}`);
+    }
+
+    return {
+        passed: results.warnings.length === 0,
+        ...results,
+        notes: results.notes.join(', ')
+    };
+}
+
 
 async function testSQLInjection(url) {
     const controller = new AbortController();
@@ -64,7 +210,7 @@ async function testSQLInjection(url) {
 async function testContentSecurityPolicy(url) {
     const controller = new AbortController();
     const timeout = setTimeout(() => controller.abort(), 10000);
-    
+
     try {
         const response = await fetch(url, {
             method: 'GET',
@@ -72,10 +218,10 @@ async function testContentSecurityPolicy(url) {
             signal: controller.signal
         });
         clearTimeout(timeout);
-        
+
         const headers = response.headers;
         const cspHeader = headers.get('Content-Security-Policy');
-        
+
         if (!cspHeader) {
             return {
                 passed: false,
@@ -83,41 +229,41 @@ async function testContentSecurityPolicy(url) {
                 notes: "Implement a Content Security Policy to prevent XSS and data injection attacks"
             };
         }
-        
+
         // Verify CSP has essential directives
         const hasDefaultSrc = /default-src\s+[^;]+;/.test(cspHeader);
         const hasScriptSrc = /script-src\s+[^;]+;/.test(cspHeader);
         const hasUnsafeInline = /unsafe-inline/.test(cspHeader);
         const hasUnsafeEval = /unsafe-eval/.test(cspHeader);
         const hasWildcardSrc = /script-src\s+[^;]*\*/.test(cspHeader);
-        
+
         const warnings = [];
-        
+
         if (!hasDefaultSrc) {
             warnings.push("Missing default-src directive in CSP");
         }
-        
+
         if (!hasScriptSrc) {
             warnings.push("Missing script-src directive in CSP");
         }
-        
+
         if (hasUnsafeInline) {
             warnings.push("CSP contains unsafe-inline directive which reduces security");
         }
-        
+
         if (hasUnsafeEval) {
             warnings.push("CSP contains unsafe-eval directive which reduces security");
         }
-        
+
         if (hasWildcardSrc) {
             warnings.push("CSP contains wildcard (*) in script-src which reduces security");
         }
-        
+
         return {
             passed: warnings.length === 0,
             warnings: warnings,
-            notes: warnings.length === 0 
-                ? "Content Security Policy is properly implemented" 
+            notes: warnings.length === 0
+                ? "Content Security Policy is properly implemented"
                 : "Content Security Policy exists but has security gaps"
         };
     } catch (error) {
@@ -304,16 +450,21 @@ async function testCSRF(url) {
     };
 }
 
-export async function run_at(urls, delayMs = 500) {
+export async function run_at(urls, delayMs = 500, logger = console.log) {
+    logger("Yo!!!")
     const summary = { processed: 0, failed: 0, results: {} };
-    const tests = [testXSS, testXFrameOptions, testPathTraversal, testCORS, testCSRF, testSQLInjection, testContentSecurityPolicy];
+    const tests = [testXSS,
+        testXFrameOptions, testPathTraversal, testCORS, testCSRF,
+        testSQLInjection, testContentSecurityPolicy,
+        testSSRF, testInsecureCookies, testClickjacking, testOpenRedirect,
+        testSecurityHeaders];
 
     for (const url of urls) {
         summary.results[url] = {};
 
         for (const test of tests) {
             console.log(test);
-            
+
             await delay(delayMs);
             try {
                 const result = await test(url);

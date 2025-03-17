@@ -1,4 +1,58 @@
-// script.js
+const socket = io();
+
+function addLog(message) {
+    const logsDiv = document.getElementById("logs");
+    const logEntry = document.createElement("div");
+    logEntry.className = "log-entry";
+    logEntry.textContent = message;
+    logsDiv.appendChild(logEntry);
+    logsDiv.scrollTop = logsDiv.scrollHeight;
+}
+
+// Setup socket event listeners
+socket.on('connect', () => {
+    console.log('Connected to server');
+});
+
+socket.on('log', (message) => {
+    addLog(message);
+});
+
+socket.on('results', (data) => {
+    displayResult(data);
+    showLoading(false);
+});
+
+socket.on('error', (message) => {
+    showNotification(message, "error");
+    showLoading(false);
+});
+
+// async function runTest() {
+//     const url = document.getElementById("urlInput").value.trim();
+//     if (!url) {
+//         showNotification("Please enter a valid URL", "error");
+//         return;
+//     }
+
+//     try {
+//         showLoading(true);
+//         const response = await fetch("/analyze", {
+//             method: "POST",
+//             headers: { "Content-Type": "application/json" },
+//             body: JSON.stringify({ url })
+//         });
+        
+//         const data = await response.json();
+//         displayResult(data);
+//     } catch (error) {
+//         showNotification("An error occurred while analyzing the URL", "error");
+//     } finally {
+//         showLoading(false);
+//     }
+// }
+
+// Modify runTest to use socket.io
 async function runTest() {
     const url = document.getElementById("urlInput").value.trim();
     if (!url) {
@@ -8,20 +62,18 @@ async function runTest() {
 
     try {
         showLoading(true);
-        const response = await fetch("/analyze", {
-            method: "POST",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({ url })
-        });
+        // Clear previous logs and results
+        document.getElementById("logs").innerHTML = "";
+        document.getElementById("result").innerHTML = "";
         
-        const data = await response.json();
-        displayResult(data);
+        // Emit start-test event
+        socket.emit('start-test', url);
     } catch (error) {
         showNotification("An error occurred while analyzing the URL", "error");
-    } finally {
         showLoading(false);
     }
 }
+
 
 function displayResult(data) {
     const resultDiv = document.getElementById("result");
